@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>time zones</title>
+    <style>
+        #time1{
+            font-weight: bold;
+            color:blue;
+        }
+        #time2{
+            font-weight:bold;
+            color:lawngreen;
+        }
+    </style>
+
+</head>
+<body>
+    <p id="time1"></p>
+    <p id="time2"></p>
+    <script>
+        var date1=new Date();
+        var utc_time=date1.toUTCString();
+        var cur_time=date1.toTimeString();
+        document.getElementById("time1").textContent=utc_time;
+        document.getElementById("time2").textContent=cur_time;
+    </script>
+    
+    
+</body>
+</html>
