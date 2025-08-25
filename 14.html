@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="30.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lexend">
+	<title>Todo List</title>
+    <style>
+    *{
+	font-family: "Lexend";
+	color: white;
+}
+
+body{
+	background-color: #000224;
+}
+
+ul{
+	list-style-type: none;
+}
+
+.data-card{
+	background-color: #ffffff;
+	color: black;
+	padding: 10px;
+	font-size: 26px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+
+input[type="checkbox"]{
+	height: 1.6em;
+	width: 1.6em;
+}
+
+input[type="text"]{
+	font-size: x-large;
+	color: black;
+	margin-bottom: 1em;
+}
+
+#remtaskbtn, #addtaskbtn{
+	color: black;
+	font-size: x-large;
+}
+</style>
+</head>
+<body>
+	<h1>Todo List</h1>
+	<hr>
+	<input type="text" id="task" placeholder="Enter task name...">
+	<button id="addtaskbtn">Add Task</button>
+	<button id="remtaskbtn">Remove Task</button>
+	<div id="todos"></div>
+
+	<script>
+        let remtaskbtn = document.getElementById("remtaskbtn");
+let addtaskbtn = document.getElementById("addtaskbtn");
+let todos = document.getElementById("todos");
+
+addtaskbtn.onclick = function(){
+	let task = document.getElementById("task").value;
+	todos.innerHTML += `
+	<div class="data-card" id="${task}">
+	    ${task}
+	</div>
+	`;
+	document.getElementById("task").value = "";
+}
+    </script>
+</body>
+</html>
